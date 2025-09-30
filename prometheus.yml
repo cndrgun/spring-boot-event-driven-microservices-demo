@@ -1,0 +1,28 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'api-gateway'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.1.43:8070']
+
+  - job_name: 'authentication-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.1.43:8080']
+
+  - job_name: 'product-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.1.43:8081']
+
+  - job_name: 'basket-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.1.43:8082']
+
+  - job_name: 'order-service'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['192.168.1.43:8083']
